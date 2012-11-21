@@ -36,6 +36,8 @@
         
         // setting some default values
         
+        _calloutPadding = 0;
+        _fixedSectionItemHeight = 0;
         _showCallouts = YES;
         _calloutDirection = SectionCalloutDirectionRight;
     }
@@ -100,7 +102,14 @@
 -(void)layoutSections
 {
 
+
+    
     sectionHeight = self.bounds.size.height/(CGFloat)[sectionViews count];
+
+    
+    if (_fixedSectionItemHeight > 0) {
+        sectionHeight = _fixedSectionItemHeight;
+    }
     
     CGFloat yOffset = 0;
     
@@ -125,7 +134,7 @@
 
             CGFloat callOutHeight = callOut.frame.size.height;
 
-            CGFloat originX;
+
             CGFloat centerY = selectedSectionView.center.y;
             
             
@@ -133,18 +142,18 @@
                 centerY = callOutHeight/2;
             }
             
-            if (selectedSectionView.center.y+callOutHeight/2 > self.bounds.size.height) {
-                centerY = self.bounds.size.height-callOutHeight/2;
+            if (selectedSectionView.center.y+callOutHeight/2 > sectionHeight*[sectionViews count]) {
+                centerY = sectionHeight*[sectionViews count]-callOutHeight/2;
             }
             
             switch (_calloutDirection) {
                 case SectionCalloutDirectionLeft:
-                    originX = 0-callOut.frame.size.width;
-                    callOut.center = CGPointMake(0-callOut.frame.size.width/2, centerY);
+
+                    callOut.center = CGPointMake(0-callOut.frame.size.width/2-_calloutPadding, centerY);
                     break;
                 case SectionCalloutDirectionRight:
-                    originX = self.frame.size.width;
-                    callOut.center = CGPointMake(selectedSectionView.frame.size.width+callOut.frame.size.width/2, centerY);
+
+                    callOut.center = CGPointMake(selectedSectionView.frame.size.width+callOut.frame.size.width/2+_calloutPadding, centerY);
                     break;
                 default:
                     NSLog(@"Error in CHSectionSelectionView: Unknown Callout Directions");

@@ -158,6 +158,7 @@
     _selectionView.delegate = self; 
     _selectionView.showCallouts = YES; // the view should show a callout when an item is selected
     _selectionView.calloutDirection = SectionCalloutDirectionRight; // Callouts should appear on the right side
+    _selectionView.calloutPadding = 20;
     [self.view addSubview:_selectionView];
     
     _testTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

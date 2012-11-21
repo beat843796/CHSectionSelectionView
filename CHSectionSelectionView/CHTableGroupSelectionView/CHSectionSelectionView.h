@@ -52,7 +52,8 @@ typedef enum {
 @property (nonatomic, weak) id<CHSectionSelectionViewDelegate> delegate;
 @property (nonatomic, assign) SectionCalloutDirection calloutDirection;         // Defaults to SectionCalloutDirectionRight
 @property (nonatomic, assign) BOOL showCallouts;                                // turning callouts of and on. defaults to YES
-
+@property (nonatomic, assign) CGFloat fixedSectionItemHeight;   // can be used to make sure an item has a fixed height, will be ignored if it is 0
+@property (nonatomic, assign) CGFloat calloutPadding;           // the space between the callout and the sectionView, defaults to 0
 -(void)reloadSections;      // Should be called after initialization, and everytime the corresponding tableview is reloaded
 
 @end
