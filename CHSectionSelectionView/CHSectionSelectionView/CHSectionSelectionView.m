@@ -25,22 +25,45 @@
 //////////////////////////////////////////////////////////////////////////
 #pragma mark - Initialization
 
+- (void) _initializeAttributes
+{
+    sectionViews = [[NSMutableArray alloc] init];
+    
+    self.clipsToBounds = NO; // Needed bacause the callouts will live outside our view
+    
+    // setting some default values
+    
+    _calloutPadding = 0;
+    _fixedSectionItemHeight = 0;
+    _showCallouts = YES;
+    _calloutDirection = SectionCalloutDirectionRight;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if(self)
+    {
+        [self _initializeAttributes];
+    }
+    
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        
-        sectionViews = [[NSMutableArray alloc] init];
-        
-        self.clipsToBounds = NO; // Needed bacause the callouts will live outside our view
-        
-        // setting some default values
-        
-        _calloutPadding = 0;
-        _fixedSectionItemHeight = 0;
-        _showCallouts = YES;
-        _calloutDirection = SectionCalloutDirectionRight;
+    if (self)
+    {
+        [self _initializeAttributes];
     }
+    return self;
+}
+
+- (id)init
+{
+    self = [super initWithFrame:CGRectZero];
     return self;
 }
 
@@ -73,14 +96,14 @@
     
     NSInteger numberOfSections = 0;
     
-    if (_dataSource && [_dataSource respondsToSelector:@selector(numberOfSectionsInSectionSelectionView:)]) {
-        numberOfSections = [_dataSource numberOfSectionsInSectionSelectionView:self];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfSectionsInSectionSelectionView:)]) {
+        numberOfSections = [self.dataSource numberOfSectionsInSectionSelectionView:self];
     }
     
     for (int section = 0; section < numberOfSections; section++) {
         
-        if (_dataSource && [_dataSource respondsToSelector:@selector(sectionSelectionView:sectionSelectionItemViewForSection:)]) {
-            CHSectionSelectionItemView *sectionView = [_dataSource sectionSelectionView:self sectionSelectionItemViewForSection:section];
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(sectionSelectionView:sectionSelectionItemViewForSection:)]) {
+            CHSectionSelectionItemView *sectionView = [self.dataSource sectionSelectionView:self sectionSelectionItemViewForSection:section];
             sectionView.section = section;
             NSLog(@"fetched view");
             
@@ -125,9 +148,9 @@
     [self highlightItemAtSection:selectedSection];
 
     if (_showCallouts) {
-        if (_dataSource && [_dataSource respondsToSelector:@selector(sectionSelectionView:callOutViewForSelectedSection:)]) {
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(sectionSelectionView:callOutViewForSelectedSection:)]) {
             
-            callOut = [_dataSource sectionSelectionView:self callOutViewForSelectedSection:selectedSection];
+            callOut = [self.dataSource sectionSelectionView:self callOutViewForSelectedSection:selectedSection];
             [self addSubview:callOut];
             
             CHSectionSelectionItemView *selectedSectionView = [sectionViews objectAtIndex:selectedSection];
@@ -165,8 +188,8 @@
 
     // Inform the delegate about the selection
     
-    if (_delegate && [_delegate respondsToSelector:@selector(sectionSelectionView:didSelectSection:)]) {
-        [_delegate sectionSelectionView:self didSelectSection:selectedSection];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(sectionSelectionView:didSelectSection:)]) {
+        [self.delegate sectionSelectionView:self didSelectSection:selectedSection];
     }
     
 }

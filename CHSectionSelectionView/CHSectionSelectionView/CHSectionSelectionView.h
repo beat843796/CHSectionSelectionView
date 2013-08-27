@@ -37,10 +37,6 @@ typedef enum {
 
 @interface CHSectionSelectionView : UIView
 {
-    
-    __weak id<CHSectionSelectionViewDataSource> dataSource;     // The Data Source
-    __weak id<CHSectionSelectionViewDelegate> delegate;         // The Delegate
-    
     CGFloat sectionHeight;
     NSMutableArray *sectionViews;                               // Contains all the section views
     NSInteger highlightedSection;                               // index of current highlighted section, -1 if nothing is highlighted
@@ -48,8 +44,8 @@ typedef enum {
     UIView *callOut;                                            // the current shown callout, nil if no callout is shown
 }
 
-@property (nonatomic, weak) id<CHSectionSelectionViewDataSource> dataSource;
-@property (nonatomic, weak) id<CHSectionSelectionViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<CHSectionSelectionViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id<CHSectionSelectionViewDelegate> delegate;
 @property (nonatomic, assign) SectionCalloutDirection calloutDirection;         // Defaults to SectionCalloutDirectionRight
 @property (nonatomic, assign) BOOL showCallouts;                                // turning callouts of and on. defaults to YES
 @property (nonatomic, assign) CGFloat fixedSectionItemHeight;   // can be used to make sure an item has a fixed height, will be ignored if it is 0
