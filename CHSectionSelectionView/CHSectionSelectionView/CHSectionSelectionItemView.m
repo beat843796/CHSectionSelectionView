@@ -10,7 +10,7 @@
 
 @implementation CHSectionSelectionItemView
 
-- (void) _initializeAttributes
+- (void) initializeAttributes
 {
     // Initialization code
     
@@ -26,12 +26,7 @@
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.highlightedTextColor = [UIColor whiteColor];
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 60000
     _titleLabel.textAlignment = NSTextAlignmentCenter;
-#else
-    _titleLabel.textAlignment = UITextAlignmentCenter;
-#endif
-    
     [_contentView addSubview:_titleLabel];
 }
 
@@ -41,7 +36,7 @@
     
     if(self)
     {
-        [self _initializeAttributes];
+        [self initializeAttributes];
     }
     
     return self;
@@ -52,14 +47,8 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self _initializeAttributes];
+        [self initializeAttributes];
     }
-    return self;
-}
-
-- (id)init
-{
-    self = [super initWithFrame:CGRectZero];
     return self;
 }
 
