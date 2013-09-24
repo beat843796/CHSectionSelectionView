@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.authors      = { "Alexandre Santos" => "alexandre_o_s@yahoo.com", "Clemens Beat" => "beat84@me.com" }
   s.platform     = :ios, '5.0'
   s.source       = { :git => "https://github.com/alexandreos/CHSectionSelectionView.git", :tag => "0.5.0" }
-  s.source_files = 'CHSectionSelectionView/CHTableGroupSelectionView/CHSectionSelectionView.{h,m}', 'CHSectionSelectionView/CHTableGroupSelectionView/CHSectionSelectionItemView.{h,m}'
+  s.source_files = 'CHSectionSelectionView/CHSectionSelectionView'
   s.requires_arc = true
 
 end
