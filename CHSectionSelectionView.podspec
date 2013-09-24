@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "CHSectionSelectionView"
   s.version      = "0.5.0"
-  s.summary      = "Easy to use and highly customizable View that displays selector controls for (e.g.) UITableView Sections. This project is inspired by the iPads Address Book application."
+  s.summary      = "Easy to use and highly customizable View that displays selector controls for (e.g.) UITableView Sections."
 
   s.description  = <<-DESC
                    Easy to use and highly customizable View that displays selector controls for (e.g.) UITableView Sections.
