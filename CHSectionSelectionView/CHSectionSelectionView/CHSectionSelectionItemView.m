@@ -10,27 +10,44 @@
 
 @implementation CHSectionSelectionItemView
 
+- (void) initializeAttributes
+{
+    // Initialization code
+    
+    _contentView = [[UIView alloc] init];
+    _contentView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_contentView];
+    
+    _bgImageView = [[UIImageView alloc] init];
+    [_contentView addSubview:_bgImageView];
+    
+    _titleLabel = [[UILabel alloc] init];
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.highlightedTextColor = [UIColor whiteColor];
+    
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    [_contentView addSubview:_titleLabel];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if(self)
+    {
+        [self initializeAttributes];
+    }
+    
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        
-        _contentView = [[UIView alloc] init];
-        _contentView.backgroundColor = [UIColor whiteColor];
-        [self addSubview:_contentView];
-        
-        _bgImageView = [[UIImageView alloc] init];
-        [_contentView addSubview:_bgImageView];
-        
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.textColor = [UIColor blackColor];
-        _titleLabel.highlightedTextColor = [UIColor whiteColor];
-
-        _titleLabel.textAlignment = UITextAlignmentCenter;
-        [_contentView addSubview:_titleLabel];
-        
+    if (self)
+    {
+        [self initializeAttributes];
     }
     return self;
 }

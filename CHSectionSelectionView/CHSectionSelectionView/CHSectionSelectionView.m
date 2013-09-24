@@ -25,21 +25,38 @@
 //////////////////////////////////////////////////////////////////////////
 #pragma mark - Initialization
 
+- (void) _initializeAttributes
+{
+    sectionViews = [[NSMutableArray alloc] init];
+    
+    self.clipsToBounds = NO; // Needed bacause the callouts will live outside our view
+    
+    // setting some default values
+    
+    _calloutPadding = 0;
+    _fixedSectionItemHeight = 0;
+    _showCallouts = YES;
+    _calloutDirection = SectionCalloutDirectionRight;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if(self)
+    {
+        [self _initializeAttributes];
+    }
+    
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        
-        sectionViews = [[NSMutableArray alloc] init];
-        
-        self.clipsToBounds = NO; // Needed bacause the callouts will live outside our view
-        
-        // setting some default values
-        
-        _calloutPadding = 0;
-        _fixedSectionItemHeight = 0;
-        _showCallouts = YES;
-        _calloutDirection = SectionCalloutDirectionRight;
+    if (self)
+    {
+        [self _initializeAttributes];
     }
     return self;
 }
@@ -52,6 +69,20 @@
     [super layoutSubviews];
     
     [self layoutSections];
+}
+
+#pragma mark - Properties
+
+- (UIView *) contentView
+{
+    if(_contentView == nil)
+    {
+        // Only instantiate if it's not set yet
+        _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        [self addSubview:_contentView];
+    }
+    
+    return _contentView;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -82,10 +113,10 @@
         if (_dataSource && [_dataSource respondsToSelector:@selector(sectionSelectionView:sectionSelectionItemViewForSection:)]) {
             CHSectionSelectionItemView *sectionView = [_dataSource sectionSelectionView:self sectionSelectionItemViewForSection:section];
             sectionView.section = section;
-            NSLog(@"fetched view");
+//            NSLog(@"fetched view");
             
             [sectionViews addObject:sectionView];
-            [self addSubview:sectionView];
+            [self.contentView addSubview:sectionView];
             
         }
         
@@ -101,10 +132,7 @@
 
 -(void)layoutSections
 {
-
-
-    
-    sectionHeight = self.bounds.size.height/(CGFloat)[sectionViews count];
+    sectionHeight = self.contentView.bounds.size.height/(CGFloat)[sectionViews count];
 
     
     if (_fixedSectionItemHeight > 0) {
@@ -114,7 +142,7 @@
     CGFloat yOffset = 0;
     
     for (UIView *sectionView in sectionViews) {
-        sectionView.frame = CGRectMake(0, yOffset, self.bounds.size.width, sectionHeight);
+        sectionView.frame = CGRectMake(0, yOffset, self.contentView.bounds.size.width, sectionHeight);
         yOffset+=sectionHeight;
     }
 }
@@ -201,15 +229,16 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    
     UITouch *touch = [touches anyObject];
     CGPoint touchPoint = [touch locationInView:self];
     
     
     for (CHSectionSelectionItemView *sectionView in sectionViews) {
         
-        if (CGRectContainsPoint(sectionView.frame, touchPoint)) {
+        CGRect frame = sectionView.frame;
+        frame.size.width = self.frame.size.width;
+        
+        if (CGRectContainsPoint(frame, touchPoint)) {
             
             [self selectedSection:sectionView.section];
             highlightedSection = sectionView.section;
@@ -219,8 +248,7 @@
         
     }
     
-    highlightedSection = -1; // nothing is highlighted
-    
+    highlightedSection = -1; // nothing is highlighted    
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -230,7 +258,10 @@
 
     for (CHSectionSelectionItemView *sectionView in sectionViews) {
         
-        if (CGRectContainsPoint(sectionView.frame, touchPoint)) {
+        CGRect frame = sectionView.frame;
+        frame.size.width = self.frame.size.width;
+        
+        if (CGRectContainsPoint(frame, touchPoint)) {
             
             // just highlight again if the section has changed
             if (sectionView.section != highlightedSection) {

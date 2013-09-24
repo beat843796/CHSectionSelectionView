@@ -54,7 +54,8 @@
     label.textColor = [UIColor redColor];
     label.font = [UIFont boldSystemFontOfSize:40];
     label.text = [_testTableView.dataSource tableView:_testTableView titleForHeaderInSection:section];
-    label.textAlignment = UITextAlignmentCenter;
+    
+    label.textAlignment = NSTextAlignmentCenter;
 
     // dont use that in your code cause layer shadows are
     // negatively affecting performance

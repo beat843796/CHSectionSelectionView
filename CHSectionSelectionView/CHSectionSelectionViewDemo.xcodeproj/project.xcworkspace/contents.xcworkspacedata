@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CHTableGroupSelectionView.xcodeproj">
+      location = "self:CHSectionSelectionViewDemo.xcodeproj">
    </FileRef>
 </Workspace>

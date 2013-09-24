@@ -48,8 +48,10 @@ typedef enum {
     UIView *callOut;                                            // the current shown callout, nil if no callout is shown
 }
 
-@property (nonatomic, weak) id<CHSectionSelectionViewDataSource> dataSource;
-@property (nonatomic, weak) id<CHSectionSelectionViewDelegate> delegate;
+@property (nonatomic, strong) IBOutlet UIView *contentView;
+
+@property (nonatomic, weak) IBOutlet id<CHSectionSelectionViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id<CHSectionSelectionViewDelegate> delegate;
 @property (nonatomic, assign) SectionCalloutDirection calloutDirection;         // Defaults to SectionCalloutDirectionRight
 @property (nonatomic, assign) BOOL showCallouts;                                // turning callouts of and on. defaults to YES
 @property (nonatomic, assign) CGFloat fixedSectionItemHeight;   // can be used to make sure an item has a fixed height, will be ignored if it is 0
