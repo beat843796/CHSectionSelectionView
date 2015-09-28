@@ -13,14 +13,12 @@
 		617A790C165BCD10008C90BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 617A790A165BCD10008C90BE /* InfoPlist.strings */; };
 		617A790E165BCD10008C90BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A790D165BCD10008C90BE /* main.m */; };
 		617A7912165BCD10008C90BE /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A7911165BCD10008C90BE /* CHAppDelegate.m */; };
-		617A7914165BCD10008C90BE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 617A7913165BCD10008C90BE /* Default.png */; };
-		617A7916165BCD10008C90BE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 617A7915165BCD10008C90BE /* Default@2x.png */; };
-		617A7918165BCD10008C90BE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 617A7917165BCD10008C90BE /* Default-568h@2x.png */; };
 		617A7920165BCD2B008C90BE /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A791F165BCD2B008C90BE /* DemoViewController.m */; };
 		617A7924165BD23C008C90BE /* CHSectionSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A7923165BD23C008C90BE /* CHSectionSelectionView.m */; };
 		617A7927165BD47D008C90BE /* CHSectionSelectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A7926165BD47D008C90BE /* CHSectionSelectionItemView.m */; };
 		617A792B165C08B9008C90BE /* DemoSectionItemSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 617A792A165C08B9008C90BE /* DemoSectionItemSubclass.m */; };
-		617A792D165C095E008C90BE /* sectionItemBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 617A792C165C095E008C90BE /* sectionItemBG.png */; };
+		AB76407A1BB9A15C00001D45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		AB76407C1BB9A18600001D45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB76407B1BB9A18600001D45 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +32,6 @@
 		617A790F165BCD10008C90BE /* CHTableGroupSelectionView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CHTableGroupSelectionView-Prefix.pch"; sourceTree = "<group>"; };
 		617A7910165BCD10008C90BE /* CHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAppDelegate.h; sourceTree = "<group>"; };
 		617A7911165BCD10008C90BE /* CHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAppDelegate.m; sourceTree = "<group>"; };
-		617A7913165BCD10008C90BE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		617A7915165BCD10008C90BE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		617A7917165BCD10008C90BE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		617A791E165BCD2B008C90BE /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		617A791F165BCD2B008C90BE /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		617A7922165BD23C008C90BE /* CHSectionSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSectionSelectionView.h; sourceTree = "<group>"; };
@@ -45,7 +40,8 @@
 		617A7926165BD47D008C90BE /* CHSectionSelectionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSectionSelectionItemView.m; sourceTree = "<group>"; };
 		617A7929165C08B9008C90BE /* DemoSectionItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSectionItemSubclass.h; sourceTree = "<group>"; };
 		617A792A165C08B9008C90BE /* DemoSectionItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSectionItemSubclass.m; sourceTree = "<group>"; };
-		617A792C165C095E008C90BE /* sectionItemBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sectionItemBG.png; sourceTree = "<group>"; };
+		AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CHTableGroupSelectionView/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB76407B1BB9A18600001D45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +61,7 @@
 		617A78F2165BCD10008C90BE = {
 			isa = PBXGroup;
 			children = (
+				AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */,
 				617A7907165BCD10008C90BE /* CHTableGroupSelectionView */,
 				617A7900165BCD10008C90BE /* Frameworks */,
 				617A78FE165BCD10008C90BE /* Products */,
@@ -92,7 +89,6 @@
 		617A7907165BCD10008C90BE /* CHTableGroupSelectionView */ = {
 			isa = PBXGroup;
 			children = (
-				617A792C165C095E008C90BE /* sectionItemBG.png */,
 				617A7928165C08A1008C90BE /* Demo */,
 				617A7921165BD1FD008C90BE /* CHSectionSelectionView */,
 				617A7910165BCD10008C90BE /* CHAppDelegate.h */,
@@ -109,9 +105,6 @@
 				617A790A165BCD10008C90BE /* InfoPlist.strings */,
 				617A790D165BCD10008C90BE /* main.m */,
 				617A790F165BCD10008C90BE /* CHTableGroupSelectionView-Prefix.pch */,
-				617A7913165BCD10008C90BE /* Default.png */,
-				617A7915165BCD10008C90BE /* Default@2x.png */,
-				617A7917165BCD10008C90BE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,6 +123,7 @@
 		617A7928165C08A1008C90BE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				AB76407B1BB9A18600001D45 /* Images.xcassets */,
 				617A791E165BCD2B008C90BE /* DemoViewController.h */,
 				617A791F165BCD2B008C90BE /* DemoViewController.m */,
 				617A7929165C08B9008C90BE /* DemoSectionItemSubclass.h */,
@@ -165,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CH;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Clemens Hammerl";
 			};
 			buildConfigurationList = 617A78F7165BCD10008C90BE /* Build configuration list for PBXProject "CHTableGroupSelectionView" */;
@@ -191,10 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				617A790C165BCD10008C90BE /* InfoPlist.strings in Resources */,
-				617A7914165BCD10008C90BE /* Default.png in Resources */,
-				617A7916165BCD10008C90BE /* Default@2x.png in Resources */,
-				617A7918165BCD10008C90BE /* Default-568h@2x.png in Resources */,
-				617A792D165C095E008C90BE /* sectionItemBG.png in Resources */,
+				AB76407C1BB9A18600001D45 /* Images.xcassets in Resources */,
+				AB76407A1BB9A15C00001D45 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +231,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -250,7 +243,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -272,7 +265,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -286,6 +279,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CHTableGroupSelectionView/CHTableGroupSelectionView-Prefix.pch";
 				INFOPLIST_FILE = "CHTableGroupSelectionView/CHTableGroupSelectionView-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.appingo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -297,6 +291,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CHTableGroupSelectionView/CHTableGroupSelectionView-Prefix.pch";
 				INFOPLIST_FILE = "CHTableGroupSelectionView/CHTableGroupSelectionView-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "at.appingo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -321,6 +316,7 @@
 				617A791D165BCD10008C90BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -28,7 +28,7 @@
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.highlightedTextColor = [UIColor whiteColor];
 
-        _titleLabel.textAlignment = UITextAlignmentCenter;
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
         [_contentView addSubview:_titleLabel];
         
     }

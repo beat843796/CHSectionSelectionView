@@ -26,7 +26,9 @@
         cellData = [NSArray arrayWithObjects:@"Test 1",@"Test 2",@"Test 42",@"Test 5", nil];
         sections = [NSArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
         
-        self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+        self.automaticallyAdjustsScrollViewInsets = YES;
+        
+        
     }
     return self;
 }
@@ -54,7 +56,7 @@
     label.textColor = [UIColor redColor];
     label.font = [UIFont boldSystemFontOfSize:40];
     label.text = [_testTableView.dataSource tableView:_testTableView titleForHeaderInSection:section];
-    label.textAlignment = UITextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentCenter;
 
     // dont use that in your code cause layer shadows are
     // negatively affecting performance
@@ -142,10 +144,16 @@
 //////////////////////////////////////////////////////////////////////////
 #pragma mark - View Stuff
 
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+
     
     _testTableView = [[UITableView alloc] init];
     _testTableView.dataSource = self;

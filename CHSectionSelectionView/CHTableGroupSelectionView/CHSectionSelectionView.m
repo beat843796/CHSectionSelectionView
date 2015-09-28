@@ -8,7 +8,15 @@
 
 #import "CHSectionSelectionView.h"
 
-@interface CHSectionSelectionView (private)
+@interface CHSectionSelectionView ()
+{
+    CGFloat sectionHeight;
+    NSMutableArray *sectionViews;                               // Contains all the section views
+    NSInteger highlightedSection;                               // index of current highlighted section, -1 if nothing is highlighted
+    
+    UIView *callOut;                                            // the current shown callout, nil if no callout is shown
+
+}
 
 -(void)layoutSections;
 -(void)highlightItemAtSection:(NSInteger)section;
