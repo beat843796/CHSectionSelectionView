@@ -40,7 +40,7 @@
 		617A7926165BD47D008C90BE /* CHSectionSelectionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSectionSelectionItemView.m; sourceTree = "<group>"; };
 		617A7929165C08B9008C90BE /* DemoSectionItemSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSectionItemSubclass.h; sourceTree = "<group>"; };
 		617A792A165C08B9008C90BE /* DemoSectionItemSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSectionItemSubclass.m; sourceTree = "<group>"; };
-		AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CHTableGroupSelectionView/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB76407B1BB9A18600001D45 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +61,6 @@
 		617A78F2165BCD10008C90BE = {
 			isa = PBXGroup;
 			children = (
-				AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */,
 				617A7907165BCD10008C90BE /* CHTableGroupSelectionView */,
 				617A7900165BCD10008C90BE /* Frameworks */,
 				617A78FE165BCD10008C90BE /* Products */,
@@ -89,6 +88,7 @@
 		617A7907165BCD10008C90BE /* CHTableGroupSelectionView */ = {
 			isa = PBXGroup;
 			children = (
+				AB7640791BB9A15C00001D45 /* LaunchScreen.storyboard */,
 				617A7928165C08A1008C90BE /* Demo */,
 				617A7921165BD1FD008C90BE /* CHSectionSelectionView */,
 				617A7910165BCD10008C90BE /* CHAppDelegate.h */,
